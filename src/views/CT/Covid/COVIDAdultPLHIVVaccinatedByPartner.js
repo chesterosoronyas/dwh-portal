@@ -26,12 +26,12 @@ const COVIDAdultPLHIVVaccinatedByPartner = () => {
                             }
                             return '0%';
                         },
-                        enabled: true
+                        enabled: false
                     }
                 }
             },
             xAxis: [{ categories: partnersVaccinated.partners, crosshair: true }],
-            yAxis: [{ title: { text: 'Percentage of Patients' } }],
+            yAxis: [{ title: { text: 'Percentage of Patients'.toUpperCase() } }],
             tooltip: { shared: true },
             legend: { align: 'left', reversed: true, verticalAlign: 'top', y: 0, x: 80 },
             series: [
@@ -39,7 +39,7 @@ const COVIDAdultPLHIVVaccinatedByPartner = () => {
                     name: 'NOT VACCINATED',
                     data: partnersVaccinated.notVaccinated.map(obj => obj.text),
                     type: 'column',
-                    color: 'red'
+                    color: '#bb1414'
                 },
                 {
                     name: 'PARTIALLY VACCINATED',
@@ -51,7 +51,7 @@ const COVIDAdultPLHIVVaccinatedByPartner = () => {
                     name: 'FULLY VACCINATED',
                     data: partnersVaccinated.fullyVaccinated.map(obj => obj.text),
                     type: 'column',
-                    color: '#69B34C'
+                    color: '#00AD30'
                 }
             ]
         });
@@ -64,7 +64,7 @@ const COVIDAdultPLHIVVaccinatedByPartner = () => {
     return (
         <Card className="trends-card">
             <CardHeader className="trends-header" style={{ textTransform: 'none' }}>
-                ADULT PLHIV VACCINATED AGAINIST COVID-19 BY PARTNER
+                PLHIV VACCINATED AGAINIST COVID-19 BY PARTNER
             </CardHeader>
             <CardBody className="trends-body">
                 <div className="col-12">

@@ -30,8 +30,8 @@ const COVIDTrendsOfAdultPLHIVVaccinationInTheLast12Months = () => {
                     }
                 }
             },
-            xAxis: [{ categories: trendsPLHIVVaccinationInTheLast12Months.yearMonthTrends, crosshair: true }],
-            yAxis: [{ title: { text: 'Percentage of Patients' } }],
+            xAxis: [{ categories: trendsPLHIVVaccinationInTheLast12Months.yearMonthTrends.map(n=>n.toUpperCase()), crosshair: true }],
+            yAxis: [{ title: { text: 'Percentage of Patients'.toUpperCase() } }],
             tooltip: { shared: true },
             legend: { align: 'left', reversed: true, verticalAlign: 'top', y: 0, x: 80 },
             series: [
@@ -39,7 +39,7 @@ const COVIDTrendsOfAdultPLHIVVaccinationInTheLast12Months = () => {
                     name: 'NOT VACCINATED',
                     data: trendsPLHIVVaccinationInTheLast12Months.trendsNotVaccinated,
                     type: 'column',
-                    color: 'red'
+                    color: '#bb1414'
                 },
                 {
                     name: 'PARTIALLY VACCINATED',
@@ -51,7 +51,7 @@ const COVIDTrendsOfAdultPLHIVVaccinationInTheLast12Months = () => {
                     name: 'FULLY VACCINATED',
                     data: trendsPLHIVVaccinationInTheLast12Months.trendsFullyVaccinated,
                     type: 'column',
-                    color: '#69B34C'
+                    color: '#00AD30'
                 }
             ]
         });
@@ -64,7 +64,7 @@ const COVIDTrendsOfAdultPLHIVVaccinationInTheLast12Months = () => {
     return (
         <Card className="trends-card">
             <CardHeader className="trends-header" style={{ textTransform: 'none' }}>
-                TRENDS OF ADULT PLHIV VACCINATION IN THE LAST 12 MONTHS
+                TRENDS OF PLHIV VACCINATION IN THE LAST 12 MONTHS
             </CardHeader>
             <CardBody className="trends-body">
                 <div className="col-12">
